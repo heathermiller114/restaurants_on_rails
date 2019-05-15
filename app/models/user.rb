@@ -4,4 +4,5 @@ class User < ApplicationRecord
     has_many :wishlists
     has_many :cities, through: :wishlists
 
+    has_secure_password
 end
