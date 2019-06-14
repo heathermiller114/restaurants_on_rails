@@ -4,5 +4,5 @@ class Restaurant < ApplicationRecord
     belongs_to :city
     has_many :wishlists
 
-
+    validates :name, presence: true, uniqueness: { case_sensitive: false }
 end
