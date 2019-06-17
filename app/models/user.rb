@@ -15,14 +15,11 @@ class User < ApplicationRecord
 
 
 
-    def create_user_from_google(auth)
-        @user = self.find_or_create_by(email: auth[:info][:email]) do |u|
+    def self.create_user_from_google(auth)
+        self.find_or_create_by(email: auth[:info][:email]) do |u|
             u.password = SecureRandom.hex
             u.username = auth[:info][:name]
         end
-   
-        @user.username = ("#{@user.username}" + "#{@user.id}").gsub(/\s+/, "")
-        @user.save
 
     end
 end
