@@ -7,7 +7,7 @@ class User < ApplicationRecord
     has_secure_password
 
     validates :password, length: { minimum: 8 }
-    validates :username, presence: true, length: { maximum: 50 }, uniqueness: { case_sensitive: false }
+   # validates :username, presence: true, length: { maximum: 50 }, uniqueness: { case_sensitive: false }
 
     VALID_EMAIL = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
