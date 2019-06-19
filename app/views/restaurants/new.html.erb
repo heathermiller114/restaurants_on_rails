@@ -9,13 +9,13 @@
     <%= f.text_field :genre %><br><br>
 
     <p>Select a city:</p>
-    <%= f.collection_select :city_id, City.all, :id, :name %>
+    <%= f.collection_select :city_id, City.all, :id, :name, include_blank: 'Select One' %>
 
     <p>Or add a new one:</p>
     <%= f.fields_for :city do |city_attributes| %>
         <%= city_attributes.label :name %>
         <%= city_attributes.text_field :name %>
     <% end %><br><br>
-    
+
     <%= f.submit "Create Restaurant" %>
 <% end %>
