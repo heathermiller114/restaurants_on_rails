@@ -12,6 +12,10 @@
     <%= f.collection_select :city_id, City.all, :id, :name %>
 
     <p>Or add a new one:</p>
-
+    <%= f.fields_for :city do |city_attributes| %>
+        <%= city_attributes.label :name %>
+        <%= city_attributes.text_field :name %>
+    <% end %><br><br>
+    
     <%= f.submit "Create Restaurant" %>
 <% end %>
