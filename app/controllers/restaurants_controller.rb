@@ -12,4 +12,10 @@ class RestaurantsController < ApplicationController
     def create
 
     end
+
+    private
+
+        def restaurant_params
+            params.require(:restaurant).permit(:name, :street_address, :genre, :city_id, city_attributes: [:name])
+        end
 end
