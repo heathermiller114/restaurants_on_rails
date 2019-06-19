@@ -5,4 +5,6 @@ class Restaurant < ApplicationRecord
     has_many :wishlists
 
     validates :name, presence: true, uniqueness: { case_sensitive: false }
+
+    accepts_nested_attributes_for :city
 end
