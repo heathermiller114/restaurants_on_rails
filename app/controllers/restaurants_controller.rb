@@ -11,11 +11,16 @@ class RestaurantsController < ApplicationController
 
     def create
         @restaurant = Restaurant.new(restaurant_params)
-        if @restaurant.save
+        #something is wrong with collection_select
+        if @restaurant.save!
             redirect_to restaurant_path(@restaurant)
         else
             render :new
         end
+    end
+
+    def show
+        @restaurant = Restaurant.find_by(id: params[:id])
     end
 
     private
