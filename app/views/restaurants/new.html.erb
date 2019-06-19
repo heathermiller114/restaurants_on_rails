@@ -8,5 +8,10 @@
     <%= f.label :genre %>
     <%= f.text_field :genre %><br><br>
 
+    <p>Select a city:</p>
+    <%= f.collection_select :city_id, City.all, :id, :name %>
+
+    <p>Or add a new one:</p>
+
     <%= f.submit "Create Restaurant" %>
 <% end %>
