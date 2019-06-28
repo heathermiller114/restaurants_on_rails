@@ -6,6 +6,7 @@
         <%= submit_tag ("Search") %>
     <% end %>
 
+<h4>Top Suggestions:</h4>
     <% @restaurants.each do |restaurant| %>
         <ul>
             <li><%= link_to restaurant.name, restaurant_path(restaurant) %></li><br>
