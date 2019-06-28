@@ -1,1 +1,13 @@
 <h1>Where do you want to go?</h1>
+
+<h4>Search by City:</h4>
+    <%= form_tag(restaurants_path, method: :get) do %>
+        <%= text_field_tag(:search, params[:search]) %>
+        <%= submit_tag ("Search") %>
+    <% end %>
+
+    <% @restaurants.each do |restaurant| %>
+        <ul>
+            <li><%= link_to restaurant.name, restaurant_path(restaurant) %></li><br>
+        </ul>
+    <% end %>

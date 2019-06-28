@@ -1,7 +1,7 @@
 class RestaurantsController < ApplicationController
     
     def index
-
+        @restaurants = Restaurant.search(params[:search])
     end
 
     def new
@@ -30,6 +30,6 @@ class RestaurantsController < ApplicationController
     private
 
         def restaurant_params
-            params.require(:restaurant).permit(:name, :street_address, :genre, :city_id, city_attributes: [:name])
+            params.require(:restaurant).permit(:name, :street_address, :genre, :city_id, :search, city_attributes: [:name])
         end
 end
