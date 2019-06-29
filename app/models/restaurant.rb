@@ -6,8 +6,6 @@ class Restaurant < ApplicationRecord
 
     validates :name, presence: true, uniqueness: { case_sensitive: false }
 
-    accepts_nested_attributes_for :city
-
     def self.search(search)
         if search
             city = City.find_by(name: search)
@@ -20,4 +18,10 @@ class Restaurant < ApplicationRecord
             Restaurant.all
         end
     end
+
+    def city_attributes=(city)
+        self.city = City.find_or_create_by(id: city_id)
+        self.city.update(city)
+    end
+
 end
