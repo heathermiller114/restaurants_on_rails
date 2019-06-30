@@ -1,0 +1,20 @@
+<%= form_for @review do |f| %>
+
+    <div>
+        <%= f.label :title %>
+        <%= f.text_field :title %><br><br>
+    </div>
+    <div>
+        <%= f.label :content %>
+        <%= f.text_area :content %><br><br>
+    </div>
+    <div>
+        <%= f.label :star_rating %>
+        <%= f.text_field :star_rating %><br><br>
+    </div>
+    <%= f.hidden_field :restaurant_id%>
+
+    <%= f.submit %>
+
+
+<% end %>
