@@ -12,10 +12,7 @@ class RestaurantsController < ApplicationController
 
     def create
         @restaurant = Restaurant.new(restaurant_params)
-        #byebug
-        @restaurant.build_city(id: params[:restaurant][:city_id])
-        #something is wrong with collection_select
-        byebug
+        
         if @restaurant.save!
             redirect_to restaurant_path(@restaurant)
         else

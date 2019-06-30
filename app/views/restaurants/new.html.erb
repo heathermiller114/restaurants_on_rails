@@ -12,9 +12,9 @@
     <%= f.collection_select :city_id, City.all, :id, :name, include_blank: 'Select One' %>
 
     <p>Or add a new one:</p>
-    <%= f.fields_for :city do |city_attributes| %>
-        <%= city_attributes.label :name %>
-        <%= city_attributes.text_field :name %>
+    <%= f.fields_for :city, @restaurant.build_city do |city_fields| %>
+        <%= city_fields.label :name %>
+        <%= city_fields.text_field :name %>
     <% end %><br><br>
 
     <%= f.submit "Create Restaurant" %>
