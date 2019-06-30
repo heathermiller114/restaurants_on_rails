@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
         @user = User.find_by(email: params[:user][:email])
         if @user && @user.authenticate(params[:user][:password])
             session[:user_id] = @user.id
-            redirect_to user_path(@user)
+            redirect_to restaurants_path
         else
             flash[:error] = "Sorry, we were unable to log you in"
             redirect_to login_path
@@ -32,7 +32,7 @@ class SessionsController < ApplicationController
         @user.save
 
         session[:user_id] = @user.id
-        redirect_to user_path(@user)
+        redirect_to restaurants_path
     end
 
     private
