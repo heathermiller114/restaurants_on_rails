@@ -7,7 +7,7 @@ class ReviewsController < ApplicationController
     def new
         #byebug
         @restaurant = Restaurant.find_by(id: params[:restaurant_id])
-        @review = @restaurant.build_review
+        @review = @restaurant.reviews.build
     end
 
     def create
