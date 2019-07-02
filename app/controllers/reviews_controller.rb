@@ -14,7 +14,11 @@ class ReviewsController < ApplicationController
         #byebug
         @restaurant = Restaurant.find_by(id: review_params[:restaurant_id])
         @review = Review.create(review_params)
-        redirect_to restaurant_reviews_path(@restaurant)
+        if @review.save
+            redirect_to restaurant_reviews_path(@restaurant)
+        else
+            render :new
+        end
     end
 
     private
