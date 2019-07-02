@@ -13,7 +13,7 @@ class ReviewsController < ApplicationController
     def create
         #byebug
         @restaurant = Restaurant.find_by(id: review_params[:restaurant_id])
-        @review = Review.create(review_params)
+        @review = current_user.reviews.build(review_params)
         if @review.save!
             redirect_to restaurant_reviews_path(@restaurant)
         else
