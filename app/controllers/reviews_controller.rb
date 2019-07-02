@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
 
     def index
-        byebug
+        #byebug
         @restaurant = Restaurant.find_by(id: params[:restaurant_id])
     end
 
