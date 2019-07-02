@@ -1,7 +1,8 @@
 class ReviewsController < ApplicationController
 
     def index
-
+        byebug
+        @restaurant = Restaurant.find_by(id: params[:restaurant_id])
     end
 
     def new
@@ -15,6 +16,7 @@ class ReviewsController < ApplicationController
         @restaurant = Restaurant.find_by(id: review_params[:restaurant_id])
         @review = current_user.reviews.build(review_params)
         if @review.save!
+            #byebug
             redirect_to restaurant_reviews_path(@restaurant)
         else
             render :new
