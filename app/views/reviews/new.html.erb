@@ -10,7 +10,7 @@
     </div>
     <div>
         <%= f.label :star_rating %>
-        <%= f.text_field :star_rating %><br><br>
+        <%= f.number_field :star_rating, min:0, max:5 %><br><br>
     </div>
     <%= f.hidden_field :restaurant_id%>
 
