@@ -2,3 +2,5 @@
 <h3><%= @restaurant.street_address %></h3>
 <h3><%= @restaurant.city.name %></h3>
 <h4><%= @restaurant.genre %> </h4>
+
+<%= link_to "Write a Review", new_restaurant_review_path(@restaurant) %>
