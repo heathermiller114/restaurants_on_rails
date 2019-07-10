@@ -1,4 +1,7 @@
 <h1>Add a Review for <%= @restaurant.name %> in <%= @restaurant.city.name %></h1><br>
+
+<%= render partial: "layouts/errors", locals: {object: @review} %>
+
 <%= form_for [@restaurant, @review] do |f| %>
 
     <div>

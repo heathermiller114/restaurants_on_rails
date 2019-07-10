@@ -1,5 +1,7 @@
 <h1>Make a New Restaurant</h1>
 
+<%= render partial: "layouts/errors", locals: {object: @restaurant} %>
+
 <%= form_for @restaurant do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %><br><br>
