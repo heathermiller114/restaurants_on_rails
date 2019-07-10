@@ -4,7 +4,8 @@ class Restaurant < ApplicationRecord
     belongs_to :city
     has_many :wishlists
 
-    validates :name, presence: true, uniqueness: { case_sensitive: false }
+    validates :name, presence: true
+    validate :not_the_same
 
     def not_the_same
         if Restaurant.find_by(name: name, street_address: street_address)
