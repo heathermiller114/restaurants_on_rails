@@ -6,6 +6,12 @@ class Restaurant < ApplicationRecord
 
     validates :name, presence: true, uniqueness: { case_sensitive: false }
 
+    def not_the_same
+        if Restaurant.find_by(name: name, street_address: street_address)
+            errors.add(:street_address, "has already been added for this restaurant.")
+        end
+    end
+
     def self.search(search)
         if search
             city = City.find_by(name: search)
