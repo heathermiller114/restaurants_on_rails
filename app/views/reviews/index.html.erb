@@ -2,8 +2,8 @@
 
 <div>
   <h5>Filter Reviews:</h5>
-  <%= form_tag("/restaurants/:id/reviews", method: 'get') do %>
-    <%= select_tag 'star_rating', options_for_select(['High to Low', 'Low to High']), include_blank: "Sort Reviews" %>
+  <%= form_tag("/restaurants/#{@restaurant.id}/reviews", method: 'get') do %>
+    <%= select_tag 'review', options_for_select(['High to Low', 'Low to High']), include_blank: "Sort Reviews" %>
     <%= submit_tag "Filter" %>
   <% end %>
 </div>
