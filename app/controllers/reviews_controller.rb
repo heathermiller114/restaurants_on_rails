@@ -5,6 +5,8 @@ class ReviewsController < ApplicationController
         @restaurant = Restaurant.find_by(id: params[:restaurant_id])
         if params[:review] == 'High to Low'
             @reviews = Review.high_to_low
+        elsif params[:review] == 'Low to High'
+            @reviews = Review.low_to_high
         else
             @reviews = @restaurant.reviews
         end
