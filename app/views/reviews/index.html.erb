@@ -1,9 +1,19 @@
 <h1>Reviews for <%= link_to @restaurant.name, restaurant_path(@restaurant) %></h1>
-<h5><%= link_to "High to Low", restaurant_reviews_path(@restaurant) %></h5><br>
-<% @reviews.each do |review| %>
-    <h3>Written by <%= review.user.username %> on <%= review.created_at.strftime("%b %d, %Y") %></h3>
-    <%= review.title %><br><br>
-    <%= review.content %>
-    <h4>Star rating: <%= review.star_rating %></h4>
-    <br><br>
-<% end %>
+
+<div>
+  <h5>Filter Reviews:</h5>
+  <%= form_tag("/restaurants/:id/reviews", method: 'get') do %>
+    <%= select_tag 'star_rating', options_for_select(['High to Low', 'Low to High']), include_blank: "Sort Reviews" %>
+    <%= submit_tag "Filter" %>
+  <% end %>
+</div>
+
+<div>
+    <% @reviews.each do |review| %>
+        <h3>Written by <%= review.user.username %> on <%= review.created_at.strftime("%b %d, %Y") %></h3>
+        <%= review.title %><br><br>
+        <%= review.content %>
+        <h4>Star rating: <%= review.star_rating %></h4>
+        <br><br>
+    <% end %>
+</div>
