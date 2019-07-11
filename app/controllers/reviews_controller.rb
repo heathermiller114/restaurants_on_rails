@@ -1,9 +1,13 @@
 class ReviewsController < ApplicationController
 
     def index
-        byebug
+        #byebug
         @restaurant = Restaurant.find_by(id: params[:restaurant_id])
-        @reviews = @restaurant.reviews
+        if params[:review] == 'High to Low'
+            @reviews = Review.high_to_low
+        else
+            @reviews = @restaurant.reviews
+        end
     end
 
     def new
