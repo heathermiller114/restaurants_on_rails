@@ -1,6 +1,7 @@
 class RestaurantsController < ApplicationController
     
     def index
+        @user = current_user
         @restaurants = Restaurant.search(params[:search])
     end
 
