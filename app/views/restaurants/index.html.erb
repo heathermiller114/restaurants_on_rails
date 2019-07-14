@@ -9,6 +9,6 @@
 <h4>Top Suggestions:</h4>
     <% @restaurants.each do |restaurant| %>
         <ul>
-            <li><%= link_to restaurant.name, restaurant_path(restaurant) %></li><br>
+            <li><%= link_to restaurant.name, restaurant_path(restaurant) %> - <%= restaurant.city.name %></li><br>
         </ul>
     <% end %>
