@@ -1,3 +1,16 @@
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="/">RoR</a>
+  <form class="form-inline">
+    <a class="btn btn-outline-primary" href="/login" role="button">Login</a>
+    <div style="padding-left: 10px;">
+        <a class="btn btn-outline-primary" href="/auth/google_oauth2" role="button">Login with Google</a>
+    </div>
+    <div style="padding-left: 10px;">
+      <a class="btn btn-outline-success" href="/signup" role="button">Sign Up</a>
+    </div>
+  </form>
+</nav>
+
 <h1>Welcome to Restaurants on Rails!</h1>
 
 <p><%= link_to "Sign up now!", signup_path %> or <%= link_to "Login!", login_path %> or you can <%= link_to "Log In with Google", '/auth/google_oauth2' %></p>
