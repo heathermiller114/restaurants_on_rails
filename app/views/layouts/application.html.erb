@@ -5,14 +5,17 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <div>
-  <%= link_to "Log Out", logout_path, method: :delete %>
-  <%= link_to "Home", restaurants_path %>
-  <%= link_to "Add New Restaurant", new_restaurant_path %>
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="/">Restaurants on Rails</a>
+      <%= link_to "Log Out", logout_path, method: :delete %>
+      <%= link_to "Home", restaurants_path %>
+      <%= link_to "Add New Restaurant", new_restaurant_path %>
   </div>
 
   <body>
