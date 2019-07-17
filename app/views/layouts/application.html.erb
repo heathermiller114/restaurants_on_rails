@@ -10,17 +10,19 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <% if logged_in? %>
-    <div class="container-fluid">
-      <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="/">RoR</a>
-      </nav>
-        <%= link_to "Log Out", logout_path, method: :delete %>
-        <%= link_to "Home", restaurants_path %>
-        <%= link_to "Add New Restaurant", new_restaurant_path %>
-    </div>
-  <% end %>
   <body>
-    <%= yield %>
+    <div class="container-fluid">
+      <% if logged_in? %>
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <a class="navbar-brand" href="/">RoR</a>
+        </nav>
+          <%= link_to "Log Out", logout_path, method: :delete %>
+          <%= link_to "Home", restaurants_path %>
+          <%= link_to "Add New Restaurant", new_restaurant_path %>
+      <% end %>
+    </div>
+    <div class="wrapper">
+      <%= yield %>
+    </div>
   </body>
 </html>

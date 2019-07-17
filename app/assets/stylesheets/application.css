@@ -16,4 +16,9 @@
 
  .jumbotron {
      text-align: center;
+     color: #c94c4c;
+ }
+
+ .wrapper {
+     color: #deeaee;
  }
