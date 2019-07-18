@@ -9,9 +9,5 @@
 </div>
 
 <div>
-  <% if @reviews == [] %>
-      <%= render partial: "empty", locals: { restaurant: @restaurant } %>
-  <% else %>
-      <%= render partial: "reviews", locals: { reviews: @reviews } %>
-  <% end %>
+  <%= show_reviews(@reviews, @restaurant) %>
 </div>
