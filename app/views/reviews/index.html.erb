@@ -10,7 +10,7 @@
 
 <div>
   <% if @reviews == [] %>
-      <%= render partial: "empty", locals: { restaurant: restaurant } %>
+      <%= render partial: "empty", locals: { restaurant: @restaurant } %>
   <% else %>
     <% @reviews.each do |review| %>
         <h3>Written by <%= review.user.username %> on <%= review.created_at.strftime("%b %d, %Y") %></h3>
