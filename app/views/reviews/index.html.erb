@@ -10,7 +10,7 @@
 
 <div>
   <% if @reviews == [] %>
-      <h3>Looks like there aren't any reviews yet! Been here before? Write one <%= link_to "here!", new_restaurant_review_path(@restaurant) %></h3>
+      <%= render partial: "empty", locals: { restaurant: restaurant } %>
   <% else %>
     <% @reviews.each do |review| %>
         <h3>Written by <%= review.user.username %> on <%= review.created_at.strftime("%b %d, %Y") %></h3>

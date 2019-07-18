@@ -5,8 +5,10 @@
 <%= form_for @user do |f| %>
     <%= f.label :username %>
     <%= f.text_field :username %><br><br>
+
     <%= f.label :email %>
     <%= f.email_field :email %><br><br>
+    
     <%= f.label :password %>
     <%= f.password_field :password %><br><br>
     <%= f.submit "Create User" %>
