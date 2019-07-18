@@ -1,0 +1,7 @@
+<% @reviews.each do |review| %>
+    <h3>Written by <%= review.user.username %> on <%= review.created_at.strftime("%b %d, %Y") %></h3>
+        <%= review.title %><br><br>
+        <%= review.content %>
+        <h4>Star rating: <%= review.star_rating %></h4>
+    <br><br>
+<% end %>
