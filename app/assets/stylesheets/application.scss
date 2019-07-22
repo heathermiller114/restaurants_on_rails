@@ -15,6 +15,16 @@
  $enable-gradients:                            true !default;
  @import "bootstrap";
 
+html {
+    min-height: 100%;
+    margin: 0;
+}
+
+body {
+    min-height: 100%;
+    margin: 0;
+}
+ 
  .jumbotron {
      text-align: center;
      color: #c94c4c;
@@ -22,10 +32,7 @@
 
  .wrapper {
      color: #deeaee;
- }
-
- .wrapper {
-    background: #273E47;
+     background: #273E47;
  }
  
  .container-fluid {
@@ -34,4 +41,12 @@
 
  h1 {
      color: #A4243B;
+ }
+
+ .footer-margin {
+     position: fixed;
+     left: 0;
+     bottom: 0;
+     width: 100%;
+     text-align: center;
  }
