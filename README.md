@@ -6,9 +6,9 @@ Restaurants on Rails is a site that allows users to add restaurants in different
 ## Installation and Setup
 This app can be installed by running git clone git@github.com:heathermiller114/restaurants_on_rails.git in your terminal. <br>
 After cloning, run <br>
-$ bundle install <br>
-$ rake db:migrate <br>
-$ rails s
+`$ bundle install` <br>
+`$ rake db:migrate` <br>
+`$ rails s`
 
 ### Usage
 Open localhost:3000 in your browser. From there, you will be asked to make an account, and you will be able to fully interact with the app. 
