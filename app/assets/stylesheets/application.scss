@@ -16,13 +16,15 @@
  @import "bootstrap";
 
 html {
-    min-height: 100%;
+    min-height: 100vw;
     margin: 0;
+    padding: 0;
 }
 
 body {
-    min-height: 100%;
+    min-height: 100vw;
     margin: 0;
+    padding: 0;
 }
  
  .jumbotron {
@@ -33,13 +35,21 @@ body {
  .wrapper {
      color: #deeaee;
      background: #273E47;
+     min-height: 100%;
  }
  
  .container-fluid {
      color: #D8C99B;
+     margin: 0;
+     padding: 0;
+     background-color: #D8973C;
  }
 
  h1 {
+     color: #deeaee;
+ }
+
+ h1.display-4 {
      color: #A4243B;
  }
 
@@ -49,4 +59,5 @@ body {
      bottom: 0;
      width: 100%;
      text-align: center;
+     background-color: #D8973C;
  }
