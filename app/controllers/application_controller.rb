@@ -6,4 +6,10 @@ class ApplicationController < ActionController::Base
             #or/equals will only call DB once if using it 1+ times in a method
         end
 
+        def require_login
+            if !session.include? :user_id
+                redirect_to '/users/new'
+            end
+        end
+
 end
