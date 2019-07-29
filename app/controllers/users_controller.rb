@@ -20,7 +20,7 @@ class UsersController < ApplicationController
 
     def show
         #byebug
-        @user = User.find_by_id(params[:id])
+        @user = current_user
         if !@user
             redirect_to root_path
         end
