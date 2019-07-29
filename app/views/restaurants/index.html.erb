@@ -1,14 +1,20 @@
-<h1>Hello, <%= @user.username %>. Where do you want to go?</h1>
-
-<h4>Search by City:</h4>
-    <%= form_tag(restaurants_path, method: :get) do %>
-        <%= text_field_tag(:search, params[:search]) %>
-        <%= submit_tag ("Search") %>
-    <% end %>
-
-<h4>Top Suggestions:</h4>
-    <% @restaurants.each do |restaurant| %>
-        <ul>
-            <li><%= link_to restaurant.name, restaurant_path(restaurant) %> - <%= restaurant.city.name %></li><br>
-        </ul>
-    <% end %>
+<div class="title">
+    <h1>Hello, <%= @user.username %>. Where do you want to go?</h1>
+</div>
+<br><br>
+<div class="search">
+    <h2>Search by City:</h2>
+        <%= form_tag(restaurants_path, method: :get) do %>
+            <%= text_field_tag(:search, params[:search]) %>
+            <%= submit_tag ("Search"), :class =>"btn btn-outline-dark" %>
+        <% end %>
+</div>
+<br><br>
+<div class="suggestions">
+    <h4>Top Suggestions:</h4>
+        <% @restaurants.each do |restaurant| %>
+            <ul>
+                <li><%= link_to restaurant.name, restaurant_path(restaurant) %> - <%= restaurant.city.name %></li><br>
+            </ul>
+        <% end %>
+</div>
