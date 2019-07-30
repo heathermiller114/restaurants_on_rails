@@ -1,15 +1,21 @@
-<h1>Signup:</h1>
+<div class="title">
+    <h1>Signup:</h1>
+</div>
+<br><br>
+<div class="fields_with_errors">
+    <%= render partial: "layouts/errors", locals: {object: @user} %>
+</div>
 
-<%= render partial: "layouts/errors", locals: {object: @user} %>
+<div class="title">
+    <%= form_for @user do |f| %>
+        <%= f.label :username %>
+        <%= f.text_field :username %><br><br>
 
-<%= form_for @user do |f| %>
-    <%= f.label :username %>
-    <%= f.text_field :username %><br><br>
-
-    <%= f.label :email %>
-    <%= f.email_field :email %><br><br>
-    
-    <%= f.label :password %>
-    <%= f.password_field :password %><br><br>
-    <%= f.submit "Create User" %>
-<% end %>
+        <%= f.label :email %>
+        <%= f.email_field :email %><br><br>
+        
+        <%= f.label :password %>
+        <%= f.password_field :password %><br><br>
+        <%= f.submit "Create User", :class =>"btn btn-outline-dark" %>
+    <% end %>
+</div>
