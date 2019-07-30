@@ -14,6 +14,7 @@
 
  $enable-gradients:                            true !default;
  @import "bootstrap";
+ @import url('https://fonts.googleapis.com/css?family=Amatic+SC|Asap+Condensed|Comfortaa|Darker+Grotesque|Open+Sans+Condensed:300|PT+Sans+Narrow|Work+Sans&display=swap');
 
 html {
     min-height: 100vw;
@@ -32,15 +33,14 @@ body {
  .jumbotron {
      text-align: center;
      color: #8f3985;
+     font-family: 'Open Sans Condensed', sans-serif;
  }
 
- nav.navbar.navbar-light.bg-light {
-     background: #D8973c;
-
- }
 
  h1 {
      color: #A675A1;
+     font-family: 'Work Sans', sans-serif;
+     font-size: 275%;
  }
 
  h1.display-4 {
@@ -63,7 +63,7 @@ body {
 }
  .card-body {
     min-height: 100%;
-    align-content: center;
+
  }
 
 .title {
@@ -74,11 +74,20 @@ body {
     text-align: center;
 }
 
-.search,h2,form {
-    margin-right: auto;
-    margin-left: auto;
-}
-
 h2 {
     color: #8f3985;
+    font-family: 'Work Sans', sans-serif;
+}
+
+nav {
+    margin-top: 5px;
+}
+
+.navbar-brand {
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.suggestions {
+    font-family: 'Work Sans', sans-serif;
+    color: #25283D;
 }
