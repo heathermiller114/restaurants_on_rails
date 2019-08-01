@@ -1,6 +1,7 @@
 <h1>Login:</h1>
-
-<p><%= flash[:error] %></p>
+<div class="error_explaination">
+    <p><%= flash[:error] %></p>
+</div>
 
 <%= form_for :user do |f| %>
     <%= f.label :email %>

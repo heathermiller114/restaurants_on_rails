@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   get '/auth/google_oauth2/callback', to: 'sessions#omniauth'
+  get '/cities/most', to: 'cities#most'
 
   resources :restaurants do
     resources :reviews, only: [:new, :index, :create]
