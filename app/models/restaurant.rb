@@ -8,6 +8,7 @@ class Restaurant < ApplicationRecord
     validate :not_the_same
 
     scope :most_reviewed, -> { Restaurant.left_joins(:reviews).group(:restaurant_id).order('COUNT(restaurants.id) DESC').limit(1) }
+    scope :high_to_low_rating, -> { Restaurant.left_joins(:reviews).group(:id).order('AVG(star_rating) DESC') }
 
     def not_the_same
         if Restaurant.find_by(name: name, street_address: street_address)

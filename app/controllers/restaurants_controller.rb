@@ -2,7 +2,7 @@ class RestaurantsController < ApplicationController
     
     def index
         @user = current_user
-        @restaurants = Restaurant.search(params[:search])
+        @restaurants = Restaurant.search(params[:search]).high_to_low_rating
     end
 
     def new
