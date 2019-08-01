@@ -26,6 +26,10 @@ class RestaurantsController < ApplicationController
         @restaurant = Restaurant.find_by(id: params[:id])
     end
 
+    def most
+        @restaurant = Restaurant.most_reviewed[0]
+    end
+
     private
 
         def restaurant_params

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   get '/auth/google_oauth2/callback', to: 'sessions#omniauth'
   get '/cities/most', to: 'cities#most'
+  get '/restaurants/most-reviewed', to: 'restaurants#most'
 
   resources :restaurants do
     resources :reviews, only: [:new, :index, :create]

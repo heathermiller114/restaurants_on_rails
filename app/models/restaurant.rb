@@ -7,6 +7,8 @@ class Restaurant < ApplicationRecord
     validates :name, presence: true
     validate :not_the_same
 
+    scope :most_reviewed, -> { Restaurant.left_joins(:reviews).group(:restaurant_id).order('COUNT(restaurants.id) DESC').limit(1) }
+
     def not_the_same
         if Restaurant.find_by(name: name, street_address: street_address)
             errors.add(:street_address, "has already been added for this restaurant.")
